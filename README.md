@@ -61,3 +61,14 @@
 
 #### What are the business goals?
 - Collect loads of good grades
+
+
+## Definition of Done (Tasks)
+- acceptance requirements are fulfilled
+- self-review done
+- checked all TODOs
+- all unit-tests pass
+- builds successfully
+- localization fully implemented in: [ German, English ]
+- pull-request merged to develop
+- signed off by product owner
