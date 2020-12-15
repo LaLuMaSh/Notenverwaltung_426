@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: '' // TODO: Insert Baseurl for prod
+  domain: '' // TODO: Insert Baseurl for prod
 };

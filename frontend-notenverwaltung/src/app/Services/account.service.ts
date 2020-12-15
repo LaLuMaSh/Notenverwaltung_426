@@ -7,13 +7,15 @@ import { environment } from '../../environments/environment';
 })
 export class AccountService {
 
+  baseUrl = 'users'
+
   constructor(private http: HttpClient) { }
 
   login = (user) => {
-    return this.http.post(`${environment.baseUrl}/login`, user);
+    return this.http.post(`${environment.domain}/login`, user);
   }
 
   createAccount = (user) => {
-    return this.http.post(`${environment.baseUrl}/register`, user);
+    return this.http.post(`${environment.domain}/${this.baseUrl}`, user);
   }
 }
