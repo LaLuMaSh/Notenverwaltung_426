@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 })
 export class AccountService {
 
-  baseUrl = 'users'
+  baseUrl = 'users';
 
   constructor(private http: HttpClient) { }
 
