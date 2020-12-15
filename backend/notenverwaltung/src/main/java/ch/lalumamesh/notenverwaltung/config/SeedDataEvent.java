@@ -2,8 +2,10 @@ package ch.lalumamesh.notenverwaltung.config;
 
 import ch.lalumamesh.notenverwaltung.model.user.User;
 import ch.lalumamesh.notenverwaltung.service.UserService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.event.EventListener;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

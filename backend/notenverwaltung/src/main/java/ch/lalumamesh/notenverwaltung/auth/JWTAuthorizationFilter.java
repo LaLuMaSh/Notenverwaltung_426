@@ -1,6 +1,6 @@
 package ch.lalumamesh.notenverwaltung.auth;
 
-import ch.lalumamesh.notenverwaltung.config.SecurityConstants;
+import ch.lalumamesh.notenverwaltung.config.SecurityConfiguration;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,17 +17,20 @@ import java.util.ArrayList;
 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
-    public JWTAuthorizationFilter(AuthenticationManager authManager) {
+    private final SecurityConfiguration securityConfiguration;
+
+    public JWTAuthorizationFilter(AuthenticationManager authManager, SecurityConfiguration securityConfiguration) {
         super(authManager);
+        this.securityConfiguration = securityConfiguration;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest req,
                                     HttpServletResponse res,
                                     FilterChain chain) throws IOException, ServletException {
-        String header = req.getHeader(SecurityConstants.HEADER_STRING);
+        String header = req.getHeader(this.securityConfiguration.headerString);
 
-        if (header == null || !header.startsWith(SecurityConstants.TOKEN_PREFIX)) {
+        if (header == null || !header.startsWith(this.securityConfiguration.tokenPrefix)) {
             chain.doFilter(req, res);
             return;
         }
@@ -39,12 +42,12 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     }
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
-        String token = request.getHeader(SecurityConstants.HEADER_STRING);
+        String token = request.getHeader(this.securityConfiguration.headerString);
         if (token != null) {
             // parse the token.
-            String user = JWT.require(Algorithm.HMAC512(SecurityConstants.SECRET.getBytes()))
+            String user = JWT.require(Algorithm.HMAC512(this.securityConfiguration.secret.getBytes()))
                     .build()
-                    .verify(token.replace(SecurityConstants.TOKEN_PREFIX, ""))
+                    .verify(token.replace(this.securityConfiguration.tokenPrefix, ""))
                     .getSubject();
 
             if (user != null) {
