@@ -4,9 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './Components/AuthComponents/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AuthInterceptor } from './Components/AuthComponents/auth.interceptor';
+
+const INTERCEPTORS = [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true,
+
+  }
+]
 
 @NgModule({
   declarations: [
@@ -29,7 +39,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
       }
     })
   ],
-  providers: [],
+  providers: [INTERCEPTORS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

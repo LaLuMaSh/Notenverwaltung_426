@@ -12,7 +12,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   login = (user) => {
-    return this.http.post(`${environment.domain}/login`, user);
+    return this.http.post(`${environment.domain}/login`, user, { observe: 'response' });
   }
 
   createAccount = (user) => {
