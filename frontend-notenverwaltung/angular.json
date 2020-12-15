@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "frontend-notenverwaltung"
+  "defaultProject": "frontend-notenverwaltung",
+  "cli": {
+    "analytics": "0443c68c-e06d-44e3-b7fc-b2885df03fb7"
+  }
 }
