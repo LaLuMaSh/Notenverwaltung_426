@@ -9,12 +9,6 @@ import org.springframework.validation.Errors;
 public class GroupValidator implements IValidator<GraduationGroup> {
     @Override
     public void validate(GraduationGroup object, Errors errors) {
-        if (object.getParentGrad() == null && object.getParentGroup() == null) {
-            errors.reject("GROUP_AND_GRADUATION_BOTH_NULL");
-        }
 
-        if (object.getParentGrad() != null && object.getParentGroup() != null) {
-            errors.reject("GROUP_AND_GRADUATION_BOTH_NOT_NULL");
-        }
     }
 }

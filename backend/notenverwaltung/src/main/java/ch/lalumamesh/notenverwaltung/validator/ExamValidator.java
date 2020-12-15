@@ -21,8 +21,11 @@ public class ExamValidator implements IValidator<Exam> {
 
     @Override
     public void validate(Exam object, Errors errors) {
-        if (object.getGrade() < examConfiguration.getMinGrade() || object.getGrade() > examConfiguration.getMaxGrade()) {
-            errors.reject("GRADE_NOT_IN_BOUND");
+        if (object.getGrade() < examConfiguration.getMinGrade()) {
+            errors.reject("GRADE_OUT_OF_BOUND_MIN");
+        }
+        if (object.getGrade() > examConfiguration.getMaxGrade()) {
+            errors.reject("GRADE_OUT_OF_BOUND_MAX");
         }
         if (object.getWeight() < generalConfiguration.getMinWeight()) {
             errors.reject("WEIGHT_OUT_OF_BOUND_MIN");

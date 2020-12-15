@@ -18,9 +18,5 @@ public class GraduationGroup implements Serializable {
     private String name;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(nullable = true, name = "fk_graduation")
-    private GraduationGroup parentGrad;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(nullable = true, name = "fk_group")
-    private GraduationGroup parentGroup;
+    private GraduationGroup parentGraduationGroup;
 }
