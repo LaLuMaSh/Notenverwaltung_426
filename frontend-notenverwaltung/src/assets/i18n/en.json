@@ -1,0 +1,17 @@
+{
+  "userinfo": {
+    "user": "User",
+    "username": "Username",
+    "password": "Password"
+  },
+  "actions": {
+    "create": "Create",
+    "login": "Login"
+  },
+  "meta": {
+    "a-m": "a",
+    "a-f": "a",
+    "a-no-vowel": "an",
+    "or": "or"
+  }
+}
