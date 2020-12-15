@@ -1,0 +1,16 @@
+{
+  "userinfo": {
+    "user": "Benutzer",
+    "username": "Benutzername",
+    "password": "Passwort"
+  },
+  "actions": {
+    "create": "Erfasse",
+    "login": "Anmelden"
+  },
+  "meta": {
+    "a-m": "einen",
+    "a-f": "eine",
+    "or": "oder"
+  }
+}

@@ -14,7 +14,7 @@ export class LoginComponent {
   }
 
   constructor(
-    private service: AccountService
+    private service: AccountService,
   ) {}
 
   login = () => {

@@ -8,6 +8,8 @@ import { FlexModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RegisterComponent } from './register/register.component';
     MatButtonModule,
     FlexModule,
     MatFormFieldModule,
+    MatInputModule,
     FormsModule,
+    TranslateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
