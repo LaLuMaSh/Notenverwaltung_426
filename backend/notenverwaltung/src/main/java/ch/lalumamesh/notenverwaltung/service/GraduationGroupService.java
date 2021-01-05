@@ -1,10 +1,8 @@
 package ch.lalumamesh.notenverwaltung.service;
 
 import ch.lalumamesh.notenverwaltung.model.GraduationGroup;
-import ch.lalumamesh.notenverwaltung.model.Subject;
 import ch.lalumamesh.notenverwaltung.repository.GraduationGroupRepository;
 import ch.lalumamesh.notenverwaltung.validator.GraduationGroupValidator;
-import ch.lalumamesh.notenverwaltung.validator.SubjectValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
