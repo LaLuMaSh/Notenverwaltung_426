@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AuthInterceptor } from './Components/AuthComponents/auth.interceptor';
+import { CreateSubjectComponent } from './Components/Subject/create-subject/create-subject.component';
 
 const INTERCEPTORS = [
   {
@@ -21,6 +22,7 @@ const INTERCEPTORS = [
 @NgModule({
   declarations: [
     AppComponent,
+    CreateSubjectComponent,
   ],
   imports: [
     BrowserModule,
