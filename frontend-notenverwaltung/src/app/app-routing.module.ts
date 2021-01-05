@@ -20,6 +20,11 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () => import('./Components/Home/home.module')
           .then(mod => mod.HomeModule)
+      },
+      {
+        path: 'semester',
+        loadChildren: () => import('./Components/Semester/semester.module')
+          .then(mod => mod.SemesterModule)
       }
       // TODO: Insert Children Here
     ],
