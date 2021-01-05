@@ -1,9 +1,7 @@
 package ch.lalumamesh.notenverwaltung.controller;
 
 import ch.lalumamesh.notenverwaltung.model.GraduationGroup;
-import ch.lalumamesh.notenverwaltung.model.Subject;
 import ch.lalumamesh.notenverwaltung.service.GraduationGroupService;
-import ch.lalumamesh.notenverwaltung.service.SubjectService;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.Errors;
