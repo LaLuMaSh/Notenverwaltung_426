@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 
 @Component
-public class GroupValidator implements IValidator<GraduationGroup> {
+public class GraduationGroupValidator implements IValidator<GraduationGroup> {
     @Override
     public void validate(GraduationGroup object, Errors errors) {
 
