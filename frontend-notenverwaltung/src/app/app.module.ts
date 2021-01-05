@@ -8,6 +8,8 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AuthInterceptor } from './Components/AuthComponents/auth.interceptor';
+import { CreateSemesterComponent } from './Components/Semester/create-semester/create-semester.component';
+import { SemesterModule } from './Components/Semester/semester.module';
 
 const INTERCEPTORS = [
   {
@@ -16,7 +18,7 @@ const INTERCEPTORS = [
     multi: true,
 
   }
-]
+];
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ const INTERCEPTORS = [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    SemesterModule,
     BrowserAnimationsModule,
     HttpClientModule,
     // 'forRoot()' tells the translate module that this is the root module
