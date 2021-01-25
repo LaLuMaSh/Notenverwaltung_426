@@ -16,13 +16,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {GraduationGroupModule} from './Components/GraduationGroup/graduation-group.module';
 import {SubjectModule} from './Components/Subject/subject.module';
+import {ClassModule} from './Components/Class/class.module';
 
 const INTERCEPTORS = [
   {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-
   }
 ];
 
@@ -38,6 +38,7 @@ const INTERCEPTORS = [
     SemesterModule,
     GraduationGroupModule,
     SubjectModule,
+    ClassModule,
     BrowserAnimationsModule,
     HttpClientModule,
     // 'forRoot()' tells the translate module that this is the root module

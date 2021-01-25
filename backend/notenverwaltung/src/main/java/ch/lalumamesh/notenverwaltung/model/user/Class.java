@@ -19,10 +19,12 @@ public class Class implements Serializable {
 
     @Column(nullable = false, name = "name")
     private String name;
+
     @ManyToMany(cascade = {
-            CascadeType.PERSIST,
             CascadeType.MERGE
-    })
+    },
+            fetch = FetchType.EAGER
+    )
     @JoinTable(name = "class_user",
             joinColumns = @JoinColumn(name = "class_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")

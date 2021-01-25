@@ -32,6 +32,11 @@ const routes: Routes = [
           .then(mod => mod.GraduationGroupModule)
       },
       {
+        path: 'class',
+        loadChildren: () => import('./Components/Class/class.module')
+          .then(mod => mod.ClassModule)
+      },
+      {
         path: 'subject',
         loadChildren: () => import('./Components/Subject/subject.module')
           .then(mod => mod.SubjectModule)
