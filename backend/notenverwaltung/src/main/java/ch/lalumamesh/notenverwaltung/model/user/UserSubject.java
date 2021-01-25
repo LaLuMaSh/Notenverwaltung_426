@@ -20,7 +20,7 @@ public class UserSubject implements Serializable {
     @Column(nullable = false, name = "weight")
     private Double weight;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_user")
     private User user;
 }

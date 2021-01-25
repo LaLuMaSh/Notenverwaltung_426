@@ -1,6 +1,7 @@
 package ch.lalumamesh.notenverwaltung.model.user;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Setter
 @Table
 public class User implements Serializable {
     private static final long serialVersionUID = 5L;
@@ -25,4 +26,21 @@ public class User implements Serializable {
 
     @ManyToMany(mappedBy = "users")
     private List<Class> classes = new ArrayList<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    @JsonIgnore
+    public List<Class> getClasses() {
+        return classes;
+    }
 }

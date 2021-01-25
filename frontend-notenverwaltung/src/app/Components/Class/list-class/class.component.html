@@ -1,0 +1,21 @@
+<h1>Fächer</h1>
+<mat-accordion *ngIf="classes">
+  <mat-expansion-panel hideToggle *ngFor="let clazz of classes">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{clazz.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="left-text"><b>Name:</b> {{clazz.name}}</p>
+    <p class="left-text"><b>ID:</b> {{clazz.id}}</p>
+
+    <mat-accordion *ngIf="clazz.users.length > 0">
+      <mat-expansion-panel hideToggle *ngFor="let usr of clazz.users">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{usr.username}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p class="left-text"><b>Name:</b> {{usr.username}}</p>
+        <p class="left-text"><b>ID:</b> {{usr.id}}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-expansion-panel>
+</mat-accordion>
