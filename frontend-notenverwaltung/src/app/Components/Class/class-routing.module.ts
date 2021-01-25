@@ -1,15 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import {ClassComponent} from './list-class/class.component';
+import {ListClassComponent} from './list-class/list-class.component';
 
 const routes: Routes = [
   {
     path: 'create',
-    component: ClassComponent
+    component: ListClassComponent
   },
   {
     path: '',
-    component: ClassComponent
+    component: ListClassComponent
   }
 ];
 

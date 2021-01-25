@@ -9,10 +9,10 @@ import {ClassService} from '../../../Services/class.service';
 
 @Component({
   selector: 'app-create-semester',
-  templateUrl: './class.component.html',
-  styleUrls: ['./class.component.scss']
+  templateUrl: './create-class.component.html',
+  styleUrls: ['./create-class.component.scss']
 })
-export class ClassComponent {
+export class CreateClassComponent {
 
   formData: Class;
 

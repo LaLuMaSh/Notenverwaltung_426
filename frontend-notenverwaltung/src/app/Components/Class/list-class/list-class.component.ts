@@ -6,10 +6,10 @@ import {ClassService} from '../../../Services/class.service';
 
 @Component({
   selector: 'app-list-semester',
-  templateUrl: './class.component.html',
-  styleUrls: ['./class.component.scss']
+  templateUrl: './list-class.component.html',
+  styleUrls: ['./list-class.component.scss']
 })
-export class ClassComponent implements OnInit {
+export class ListClassComponent implements OnInit {
   classes: Class[];
 
   constructor(private service: ClassService) { }

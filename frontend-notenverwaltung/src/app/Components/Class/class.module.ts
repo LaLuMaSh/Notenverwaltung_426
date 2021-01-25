@@ -7,15 +7,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import {ClassComponent} from './list-class/class.component';
+import {ListClassComponent} from './list-class/list-class.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {CommonModule} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
+import {CreateClassComponent} from './create-class/create-class.component';
+import {AddMemberComponent} from './add-member/add-member.component';
 
 @NgModule({
   declarations: [
-    ClassComponent,
-    ClassComponent,
+    ListClassComponent,
+    CreateClassComponent,
+    AddMemberComponent
   ],
   imports: [
     ClassRoutingModule,
@@ -32,7 +35,7 @@ import {MatSelectModule} from '@angular/material/select';
   providers: [],
   bootstrap: [AppComponent],
   exports: [
-    ClassComponent,
+    ListClassComponent,
   ]
 })
 

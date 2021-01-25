@@ -23,7 +23,6 @@ const INTERCEPTORS = [
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-
   }
 ];
 
