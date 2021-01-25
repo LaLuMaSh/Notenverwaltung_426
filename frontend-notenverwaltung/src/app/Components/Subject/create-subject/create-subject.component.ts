@@ -30,7 +30,8 @@ export class CreateSubjectComponent {
     }
     this.formData.group = this.group;
 
-    this.service.create(this.formData).subscribe();
-    this.router.navigateByUrl('/subject');
+    this.service.create(this.formData).subscribe(value => {
+      this.router.navigateByUrl('/subject');
+    });
   }
 }

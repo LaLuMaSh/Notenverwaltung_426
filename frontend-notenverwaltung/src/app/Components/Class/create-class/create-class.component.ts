@@ -21,7 +21,8 @@ export class CreateClassComponent {
   }
 
   submit = () => {
-    this.classService.create(this.formData).subscribe();
-    this.router.navigateByUrl('/class');
+    this.classService.create(this.formData).subscribe(value => {
+      this.router.navigateByUrl('/class');
+    });
   }
 }

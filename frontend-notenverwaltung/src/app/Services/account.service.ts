@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import {Observable} from 'rxjs';
+import {Class} from '../Model/Class';
+import {User} from '../Model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +25,9 @@ export class AccountService {
 
   isLoggedIn(): boolean {
     return localStorage.getItem('token') != null;
+  }
+
+  public getAll(): Observable<User[]> {
+    return this.http.get<User[]>(`${environment.domain}/${this.baseUrl}`);
   }
 }
