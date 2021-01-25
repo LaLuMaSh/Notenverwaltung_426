@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="1em" class="create-semester-container" *ngIf="groups">
+  <mat-form-field>
+    <mat-label>{{ 'meta.name' | translate }}</mat-label>
+    <input matInput type="text" [(ngModel)]="formData.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Parent</mat-label>
+    <mat-select required [(ngModel)]="this.parent" [(value)]="this.parent">
+      <mat-option  [value]="null">
+        Keine Gruppe
+      </mat-option>
+      <mat-option *ngFor="let group of groups" [value]="group">
+        {{group.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()">{{ 'actions.create' | translate }}</button>
+</div>

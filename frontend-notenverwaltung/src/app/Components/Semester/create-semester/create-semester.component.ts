@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SemesterService } from '../../../Services/semester.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-semester',
@@ -12,9 +13,10 @@ export class CreateSemesterComponent {
     name: '',
   };
 
-  constructor(private service: SemesterService) { }
+  constructor(private router: Router, private service: SemesterService) { }
 
   submit = () => {
     this.service.create(this.formData).subscribe();
+    this.router.navigateByUrl('/group');
   }
 }

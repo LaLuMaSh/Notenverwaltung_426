@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {GraduationGroupModule} from './Components/GraduationGroup/graduation-group.module';
 
 const INTERCEPTORS = [
   {
@@ -34,6 +35,7 @@ const INTERCEPTORS = [
     AppRoutingModule,
     AuthModule,
     SemesterModule,
+    GraduationGroupModule,
     BrowserAnimationsModule,
     HttpClientModule,
     // 'forRoot()' tells the translate module that this is the root module

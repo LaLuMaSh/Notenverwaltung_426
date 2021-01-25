@@ -1,0 +1,13 @@
+<h1>Gruppen</h1>
+<mat-accordion *ngIf="groups">
+  <mat-expansion-panel hideToggle *ngFor="let category of groups">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{category.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="left-text"><b>Name:</b> {{category.name}}</p>
+    <p class="left-text"><b>ID:</b> {{category.id}}</p>
+    <div *ngIf="category.parentGraduationGroup != null">
+      <p class="left-text"><b>Parent:</b> {{category.parentGraduationGroup.name}}</p>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
