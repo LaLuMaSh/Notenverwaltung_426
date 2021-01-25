@@ -11,24 +11,39 @@
         </mat-toolbar-row>
       </div>
 
-      <div>
-        <mat-toolbar-row>
-          <mat-accordion *ngIf="login.isLoggedIn()">
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <button class="sidenav-button" mat-button routerLink="/semester" routerLinkActive="active">
-                    <a>Semester</a>
-                  </button>
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <button class="sidenav-button" mat-button routerLink="/semester/create" routerLinkActive="active">
-                <a>Semester erstellen</a>
-              </button>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-toolbar-row>
-      </div>
+      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <button class="sidenav-button" mat-button routerLink="/semester" routerLinkActive="active">
+                  <a>Semester</a>
+                </button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button class="sidenav-button" mat-button routerLink="/semester/create" routerLinkActive="active">
+              <a>Semester erstellen</a>
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <button class="sidenav-button" mat-button routerLink="/group" routerLinkActive="active">
+                  <a>Gruppen</a>
+                </button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button class="sidenav-button" mat-button routerLink="/group/create" routerLinkActive="active">
+              <a>Grouppe erstellen</a>
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-toolbar-row>
     </nav>
   </mat-drawer>
   <router-outlet></router-outlet>
