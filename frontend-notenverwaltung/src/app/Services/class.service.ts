@@ -16,9 +16,13 @@ export class ClassService {
   constructor(private http: HttpClient, private httpClient: HttpClient) {
   }
 
-  create = (group) => {
-    return this.http.post(`${environment.domain}/${this.baseUrl}`, group);
-  }
+  create = (clazz) => {
+    return this.http.post(`${environment.domain}/${this.baseUrl}`, clazz);
+  };
+
+  update = (clazz) => {
+    return this.http.put(`${environment.domain}/${this.baseUrl}`, clazz);
+  };
 
   public getAll(): Observable<Class[]> {
     return this.httpClient.get<Class[]>(`${environment.domain}/${this.baseUrl}`);

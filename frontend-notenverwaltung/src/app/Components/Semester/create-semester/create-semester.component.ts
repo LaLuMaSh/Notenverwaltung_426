@@ -16,7 +16,8 @@ export class CreateSemesterComponent {
   constructor(private router: Router, private service: SemesterService) { }
 
   submit = () => {
-    this.service.create(this.formData).subscribe();
-    this.router.navigateByUrl('/group');
+    this.service.create(this.formData).subscribe(value => {
+      this.router.navigateByUrl('/group');
+    });
   }
 }

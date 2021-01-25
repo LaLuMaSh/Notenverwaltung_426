@@ -28,7 +28,8 @@ export class CreateGraduationGroupComponent {
       this.formData.parentGraduationGroup = this.parent;
     }
 
-    this.service.create(this.formData).subscribe();
-    this.router.navigateByUrl('/group');
+    this.service.create(this.formData).subscribe(value => {
+      this.router.navigateByUrl('/group');
+    });
   }
 }

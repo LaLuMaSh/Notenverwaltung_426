@@ -1,1 +1,21 @@
-<p>add-member works!</p>
+<div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="1em" class="create-semester-container" *ngIf="users && classes">
+  <mat-form-field>
+    <mat-label>Klasse</mat-label>
+    <mat-select required [(ngModel)]="this.clazz" [(value)]="this.clazz">
+      <mat-option *ngFor="let clazz of classes" [value]="clazz">
+        {{clazz.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>User</mat-label>
+    <mat-select required [(ngModel)]="this.user" [(value)]="this.user">
+      <mat-option *ngFor="let user of users" [value]="user">
+        {{user.username}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()">{{ 'actions.create' | translate }}</button>
+</div>
