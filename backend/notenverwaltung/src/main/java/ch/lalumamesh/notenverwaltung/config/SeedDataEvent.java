@@ -31,7 +31,7 @@ public class SeedDataEvent {
     @EventListener
     public void seedTestData(ApplicationReadyEvent event) {
         User user = new User();
-        user.setPassword(passwordEncoder.encode("password"));
+        user.setPassword(passwordEncoder.encode("123"));
         user.setUsername("admin");
         user.setClasses(new ArrayList<>());
 

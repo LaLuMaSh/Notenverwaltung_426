@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @Table
 public class GraduationGroup implements Serializable {
-    private static final long serialVersionUID = 3L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

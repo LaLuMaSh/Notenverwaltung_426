@@ -1,1 +1,35 @@
-<router-outlet></router-outlet>
+<app-header></app-header>
+<mat-drawer-container autosize>
+
+  <mat-drawer opened #drawer mode="side">
+    <nav>
+      <div *ngIf="!login.isLoggedIn()">
+        <mat-toolbar-row>
+          <button class="sidenav-button" mat-button routerLink="/login" routerLinkActive="active">
+            <a>Anmelden</a>
+          </button>
+        </mat-toolbar-row>
+      </div>
+
+      <div>
+        <mat-toolbar-row>
+          <mat-accordion *ngIf="login.isLoggedIn()">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <button class="sidenav-button" mat-button routerLink="/semester" routerLinkActive="active">
+                    <a>Semester</a>
+                  </button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <button class="sidenav-button" mat-button routerLink="/semester/create" routerLinkActive="active">
+                <a>Semester erstellen</a>
+              </button>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-toolbar-row>
+      </div>
+    </nav>
+  </mat-drawer>
+  <router-outlet></router-outlet>
+</mat-drawer-container>

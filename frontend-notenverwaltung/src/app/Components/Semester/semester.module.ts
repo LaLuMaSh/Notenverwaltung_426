@@ -8,10 +8,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import {ListSemesterComponent} from './list-semester/list-semester.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
     CreateSemesterComponent,
+    ListSemesterComponent,
   ],
   imports: [
     SemesterRoutingModule,
@@ -21,6 +25,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatInputModule,
     FormsModule,
     TranslateModule,
+    MatExpansionModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
