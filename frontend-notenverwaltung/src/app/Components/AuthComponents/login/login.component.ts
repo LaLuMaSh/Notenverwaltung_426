@@ -12,7 +12,7 @@ export class LoginComponent {
   formData = {
     username: '',
     password: ''
-  }
+  };
 
   constructor(
     private service: AccountService,

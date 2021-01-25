@@ -8,8 +8,12 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AuthInterceptor } from './Components/AuthComponents/auth.interceptor';
-import { CreateSemesterComponent } from './Components/Semester/create-semester/create-semester.component';
 import { SemesterModule } from './Components/Semester/semester.module';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { HeaderComponent } from './header/header.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const INTERCEPTORS = [
   {
@@ -23,6 +27,7 @@ const INTERCEPTORS = [
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,11 @@ const INTERCEPTORS = [
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [INTERCEPTORS],
   bootstrap: [AppComponent]

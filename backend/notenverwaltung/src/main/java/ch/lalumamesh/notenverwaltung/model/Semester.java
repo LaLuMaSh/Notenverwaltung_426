@@ -15,6 +15,6 @@ public class Semester implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(insertable = false, name = "name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 }
