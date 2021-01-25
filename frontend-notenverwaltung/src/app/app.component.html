@@ -44,6 +44,24 @@
           </mat-expansion-panel>
         </mat-accordion>
       </mat-toolbar-row>
+
+
+      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <button class="sidenav-button" mat-button routerLink="/subject" routerLinkActive="active">
+                  <a>Fächer</a>
+                </button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button class="sidenav-button" mat-button routerLink="/subject/create" routerLinkActive="active">
+              <a>Fächer erstellen</a>
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-toolbar-row>
     </nav>
   </mat-drawer>
   <router-outlet></router-outlet>

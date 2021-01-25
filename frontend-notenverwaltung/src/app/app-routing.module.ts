@@ -30,6 +30,11 @@ const routes: Routes = [
         path: 'group',
         loadChildren: () => import('./Components/GraduationGroup/graduation-group.module')
           .then(mod => mod.GraduationGroupModule)
+      },
+      {
+        path: 'subject',
+        loadChildren: () => import('./Components/Subject/subject.module')
+          .then(mod => mod.SubjectModule)
       }
       // TODO: Insert Children Here
     ],
