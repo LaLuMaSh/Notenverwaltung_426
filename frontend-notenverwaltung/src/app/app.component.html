@@ -108,13 +108,27 @@
                 <button class="sidenav-button" mat-button routerLink="/personal" routerLinkActive="active">
                   <a>Persönlich</a>
                 </button>
+
               </mat-panel-title>
+
             </mat-expansion-panel-header>
+
             <button class="sidenav-button" mat-button routerLink="/personal/exam" routerLinkActive="active">
               <a>Eigene Prüfung</a>
             </button>
+            <button class="sidenav-button" mat-button routerLink="/personal/exam/create" routerLinkActive="active">
+              <a>Prüfung erfassen</a>
+            </button>
           </mat-expansion-panel>
         </mat-accordion>
+
+        <div *ngIf="login.isLoggedIn()">
+          <mat-toolbar-row>
+            <button class="sidenav-button" mat-button routerLink="/logout" routerLinkActive="active">
+              <a>Abmelden</a>
+            </button>
+          </mat-toolbar-row>
+        </div>
       </mat-toolbar-row>
     </nav>
   </mat-drawer>

@@ -54,4 +54,9 @@ export class AccountService {
 
     return false;
   }
+
+  logout() {
+    localStorage.removeItem('permissions');
+    localStorage.removeItem('token');
+  }
 }

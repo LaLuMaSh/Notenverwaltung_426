@@ -26,6 +26,10 @@ export class ExamService {
   }
 
   getMy() {
-    return this.httpClient.get<Exam[]>(`${environment.domain}/${this.baseUrl}/my`);
+    return this.httpClient.get<Exam[]>(`${environment.domain}/${this.baseUrl}/me`);
+  }
+
+  createOwn = (exam) => {
+    return this.http.post(`${environment.domain}/${this.baseUrl}/me`, exam);
   }
 }
