@@ -17,6 +17,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {GraduationGroupModule} from './Components/GraduationGroup/graduation-group.module';
 import {SubjectModule} from './Components/Subject/subject.module';
 import {ClassModule} from './Components/Class/class.module';
+import {ExamModule} from './Components/Exam/exam.module';
 
 const INTERCEPTORS = [
   {
@@ -39,6 +40,7 @@ const INTERCEPTORS = [
     GraduationGroupModule,
     SubjectModule,
     ClassModule,
+    ExamModule,
     BrowserAnimationsModule,
     HttpClientModule,
     // 'forRoot()' tells the translate module that this is the root module
