@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="1em" class="create-semester-container" *ngIf="users">
+  <mat-form-field>
+    <mat-label>Note</mat-label>
+    <input matInput type="number" [(ngModel)]="formData.grade">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Gewicht</mat-label>
+    <input matInput type="number" [(ngModel)]="formData.weight">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Fach</mat-label>
+    <mat-select required [(ngModel)]="this.formData.subject" [(value)]="this.formData.subject">
+      <mat-option *ngFor="let subject of subjects" [value]="subject">
+        {{subject.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Benutzer</mat-label>
+    <mat-select required [(ngModel)]="this.formData.user" [(value)]="this.formData.user">
+      <mat-option *ngFor="let user of users" [value]="user">
+        {{user.username}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()">{{ 'actions.create' | translate }}</button>
+</div>

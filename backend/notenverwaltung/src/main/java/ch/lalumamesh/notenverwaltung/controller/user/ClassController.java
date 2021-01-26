@@ -1,7 +1,7 @@
-package ch.lalumamesh.notenverwaltung.controller.group;
+package ch.lalumamesh.notenverwaltung.controller.user;
 
 import ch.lalumamesh.notenverwaltung.model.user.Class;
-import ch.lalumamesh.notenverwaltung.service.group.ClassService;
+import ch.lalumamesh.notenverwaltung.service.user.ClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

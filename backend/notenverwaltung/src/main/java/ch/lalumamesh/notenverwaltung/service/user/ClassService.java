@@ -1,4 +1,4 @@
-package ch.lalumamesh.notenverwaltung.service.group;
+package ch.lalumamesh.notenverwaltung.service.user;
 
 import ch.lalumamesh.notenverwaltung.model.user.Class;
 import ch.lalumamesh.notenverwaltung.repository.user.ClassRepository;

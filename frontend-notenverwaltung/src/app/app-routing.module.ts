@@ -40,6 +40,11 @@ const routes: Routes = [
         path: 'subject',
         loadChildren: () => import('./Components/Subject/subject.module')
           .then(mod => mod.SubjectModule)
+      },
+      {
+        path: 'exam',
+        loadChildren: () => import('./Components/Exam/exam.module')
+          .then(mod => mod.ExamModule)
       }
       // TODO: Insert Children Here
     ],
