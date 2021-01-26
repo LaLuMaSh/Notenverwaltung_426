@@ -22,7 +22,10 @@ export class LoginComponent {
   login = () => {
     this.service.login(this.formData).subscribe(r => {
       localStorage.setItem('token', r.headers.get('Authorization'));
-      this.router.navigate(['home']);
+      this.service.getMe().subscribe(value => {
+        localStorage.setItem('permissions', JSON.stringify(value.permissions));
+        this.router.navigate(['home']);
+      });
     });
   }
 }

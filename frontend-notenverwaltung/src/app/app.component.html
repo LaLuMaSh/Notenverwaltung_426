@@ -11,7 +11,7 @@
         </mat-toolbar-row>
       </div>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -28,7 +28,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -46,7 +46,7 @@
       </mat-toolbar-row>
 
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -63,7 +63,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -83,7 +83,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn()&& login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -100,7 +100,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
