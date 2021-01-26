@@ -11,35 +11,34 @@ import {ExamService} from '../../../Services/exam.service';
 
 @Component({
   selector: 'app-create-semester',
-  templateUrl: './create-exam.component.html',
-  styleUrls: ['./create-exam.component.scss']
+  templateUrl: './create-personal-exam.component.html',
+  styleUrls: ['./create-personal-exam.component.scss']
 })
-export class CreateExamComponent {
+export class CreatePersonalExamComponent {
 
-  users: User[];
   subjects: Subject[];
   formData: Exam;
 
   constructor(
-    private accountService: AccountService,
     private subjectService: SubjectService,
+    private authService: AccountService,
     private service: ExamService, private router: Router
   ) {
     this.formData = new Exam();
-    this.accountService.getAll().subscribe(value => {
-      this.users = value;
-    });
     this.subjectService.getAll().subscribe(value => {
       this.subjects = value;
     });
   }
 
   submit = () => {
-    if (this.formData.subject == null || this.formData.user == null) {
+    if (this.formData.subject == null) {
       return;
     }
-    this.service.create(this.formData).subscribe(value => {
-      this.router.navigateByUrl('/exam');
+    this.authService.getMe().subscribe(usr => {
+      this.formData.user = usr;
+      this.service.create(this.formData).subscribe(value => {
+        this.router.navigateByUrl('/personal');
+      });
     });
-  };
+  }
 }

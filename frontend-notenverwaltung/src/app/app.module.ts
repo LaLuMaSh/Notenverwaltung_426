@@ -19,6 +19,7 @@ import {SubjectModule} from './Components/Subject/subject.module';
 import {ClassModule} from './Components/Class/class.module';
 import {ExamModule} from './Components/Exam/exam.module';
 import {PersonalModule} from './Components/Personal/personal.module';
+import { LogoutComponent } from './Components/logout/logout.component';
 
 const INTERCEPTORS = [
   {
@@ -31,7 +32,8 @@ const INTERCEPTORS = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

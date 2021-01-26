@@ -63,4 +63,10 @@ public class ExamService {
         User myself = this.userService.getMyself();
         return this.examRepository.findAllByUser(myself);
     }
+
+    public Exam saveOwnExam(Exam exam, Errors errors) {
+        User myself = this.userService.getMyself();
+        exam.setUser(myself);
+        return this.save(errors, exam, true);
+    }
 }

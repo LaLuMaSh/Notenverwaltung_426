@@ -61,10 +61,19 @@ public class ExamController {
         }
     }
 
-    @GetMapping("my")
+    @GetMapping("me")
     public List<Exam> getOwn() throws ResponseStatusException {
         try {
             return this.service.getOwnExams();
+        } catch (DataIntegrityViolationException ex) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, ex.getLocalizedMessage());
+        }
+    }
+
+    @PostMapping("me")
+    public Exam saveOwn(Exam exam, Errors errors) throws ResponseStatusException {
+        try {
+            return this.service.saveOwnExam(exam, errors);
         } catch (DataIntegrityViolationException ex) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, ex.getLocalizedMessage());
         }

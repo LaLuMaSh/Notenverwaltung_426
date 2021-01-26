@@ -12,11 +12,13 @@ import {CommonModule} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {PersonalOverviewComponent} from './personal-overview/personal-overview.component';
 import {PersonalRoutingModule} from './personal-routing.module';
+import {CreatePersonalExamComponent} from './create-personal-exam/create-personal-exam.component';
 
 @NgModule({
   declarations: [
     PersonalOverviewComponent,
     ListPersonalExamComponent,
+    CreatePersonalExamComponent
   ],
   imports: [
     MatButtonModule,
