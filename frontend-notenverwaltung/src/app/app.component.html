@@ -11,7 +11,7 @@
         </mat-toolbar-row>
       </div>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -28,7 +28,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -46,7 +46,7 @@
       </mat-toolbar-row>
 
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -63,7 +63,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -83,7 +83,7 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-      <mat-toolbar-row  *ngIf="login.isLoggedIn()">
+      <mat-toolbar-row *ngIf="login.isLoggedIn()&& login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -95,6 +95,23 @@
             </mat-expansion-panel-header>
             <button class="sidenav-button" mat-button routerLink="/exam/create" routerLinkActive="active">
               <a>Prüfung erstellen</a>
+            </button>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row *ngIf="login.isLoggedIn()">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <button class="sidenav-button" mat-button routerLink="/personal" routerLinkActive="active">
+                  <a>Persönlich</a>
+                </button>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <button class="sidenav-button" mat-button routerLink="/personal/exam" routerLinkActive="active">
+              <a>Eigene Prüfung</a>
             </button>
           </mat-expansion-panel>
         </mat-accordion>

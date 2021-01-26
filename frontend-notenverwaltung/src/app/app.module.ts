@@ -18,6 +18,7 @@ import {GraduationGroupModule} from './Components/GraduationGroup/graduation-gro
 import {SubjectModule} from './Components/Subject/subject.module';
 import {ClassModule} from './Components/Class/class.module';
 import {ExamModule} from './Components/Exam/exam.module';
+import {PersonalModule} from './Components/Personal/personal.module';
 
 const INTERCEPTORS = [
   {
@@ -41,6 +42,7 @@ const INTERCEPTORS = [
     SubjectModule,
     ClassModule,
     ExamModule,
+    PersonalModule,
     BrowserAnimationsModule,
     HttpClientModule,
     // 'forRoot()' tells the translate module that this is the root module

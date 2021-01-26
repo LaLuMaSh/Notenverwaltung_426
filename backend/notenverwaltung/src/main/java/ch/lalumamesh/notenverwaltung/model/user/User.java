@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity
 @Setter
-@Table
+@Table(name = "user")
 public class User implements Serializable {
     private static final long serialVersionUID = 5L;
 
@@ -27,6 +27,9 @@ public class User implements Serializable {
     @ManyToMany(mappedBy = "users")
     private List<Class> classes = new ArrayList<>();
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    private List<Permission> permissions;
+
     public Long getId() {
         return id;
     }
@@ -38,9 +41,12 @@ public class User implements Serializable {
     public String getPassword() {
         return password;
     }
-
     @JsonIgnore
     public List<Class> getClasses() {
         return classes;
+    }
+
+    public List<Permission> getPermissions() {
+        return permissions;
     }
 }
