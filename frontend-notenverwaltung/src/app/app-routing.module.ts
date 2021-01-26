@@ -45,6 +45,11 @@ const routes: Routes = [
         path: 'exam',
         loadChildren: () => import('./Components/Exam/exam.module')
           .then(mod => mod.ExamModule)
+      },
+      {
+        path: 'personal',
+        loadChildren: () => import('./Components/Personal/personal.module')
+          .then(mod => mod.PersonalModule)
       }
       // TODO: Insert Children Here
     ],

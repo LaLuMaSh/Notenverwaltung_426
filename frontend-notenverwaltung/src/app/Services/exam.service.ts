@@ -24,4 +24,8 @@ export class ExamService {
   public getAll(): Observable<Exam[]> {
     return this.httpClient.get<Exam[]>(`${environment.domain}/${this.baseUrl}`);
   }
+
+  getMy() {
+    return this.httpClient.get<Exam[]>(`${environment.domain}/${this.baseUrl}/my`);
+  }
 }

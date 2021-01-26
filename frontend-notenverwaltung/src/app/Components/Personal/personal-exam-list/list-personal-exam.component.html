@@ -1,0 +1,12 @@
+<h1>Eigene Prüfungen</h1>
+<mat-accordion *ngIf="exams">
+  <mat-expansion-panel hideToggle *ngFor="let exam of exams">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{exam.subject.name}} - {{exam.grade}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="left-text"><b>ID:</b> {{exam.id}}</p>
+    <p class="left-text"><b>Note:</b> {{exam.grade}}</p>
+    <p class="left-text"><b>Gewicht:</b> {{exam.weight}}</p>
+    <p class="left-text"><b>Fach:</b> {{exam.subject.name}}</p>
+  </mat-expansion-panel>
+</mat-accordion>
