@@ -17,7 +17,7 @@ public class Exam implements Serializable {
     private Long id;
 
     @Column(nullable = false, name = "grade")
-    private Long grade;
+    private Double grade;
 
     @Column(nullable = false, name = "weight")
     private Double weight;
