@@ -45,7 +45,6 @@
         </mat-accordion>
       </mat-toolbar-row>
 
-
       <mat-toolbar-row *ngIf="login.isLoggedIn() && login.isAdmin()">
         <mat-accordion>
           <mat-expansion-panel>
@@ -132,5 +131,7 @@
       </mat-toolbar-row>
     </nav>
   </mat-drawer>
-  <router-outlet></router-outlet>
+   <div class="content">
+     <router-outlet></router-outlet>
+   </div>
 </mat-drawer-container>
