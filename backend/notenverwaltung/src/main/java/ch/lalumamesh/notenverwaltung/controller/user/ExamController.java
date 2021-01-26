@@ -60,4 +60,13 @@ public class ExamController {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, ex.getLocalizedMessage());
         }
     }
+
+    @GetMapping("my")
+    public List<Exam> getOwn() throws ResponseStatusException {
+        try {
+            return this.service.getOwnExams();
+        } catch (DataIntegrityViolationException ex) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, ex.getLocalizedMessage());
+        }
+    }
 }

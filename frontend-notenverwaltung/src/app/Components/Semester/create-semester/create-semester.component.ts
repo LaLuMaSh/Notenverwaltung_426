@@ -17,7 +17,7 @@ export class CreateSemesterComponent {
 
   submit = () => {
     this.service.create(this.formData).subscribe(value => {
-      this.router.navigateByUrl('/group');
+      this.router.navigateByUrl('/semester');
     });
   }
 }
